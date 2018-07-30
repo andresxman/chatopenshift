@@ -3,6 +3,7 @@
 var app  = require('express')();
 var http = require('http').Server(app);
 var io   = require('socket.io')(http);
+var port = process.env.PORT || 8080;
 
 
 /** *** *** ***
@@ -45,7 +46,6 @@ io.on('connection', function(socket) {
   
 });
 
-var port = process.env.PORT || 8080;
 /**
  * Iniciamos la aplicación en el puerto 3000
  */

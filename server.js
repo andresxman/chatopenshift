@@ -5,15 +5,17 @@ var http = require('http').Server(app);
 //var io   = require('socket.io')(http);
 var port = process.env.PORT || 8080;
 
+http.listen(port);
+
 
 /** *** *** ***
  *  Configuramos el sistema de ruteo para las peticiones web
  *  de manera que sin importar la ruta que el usuario solicite
  *  siempre lo direccionaremos al html del sistema de chat.
  */
-app.get('*', function(req, res) {
+/*app.get('*', function(req, res) {
   res.sendFile( __dirname + '/views/chat.html');
-});
+});*/
 
 
 /** *** *** ***
@@ -49,6 +51,6 @@ app.get('*', function(req, res) {
 /**
  * Iniciamos la aplicación en el puerto 3000
  */
-http.listen(port, function() {
+/*http.listen(port, function() {
   console.log('listening');
-});
+});*/

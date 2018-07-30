@@ -31,7 +31,8 @@ var server = app.listen(port1, function () {
    console.log("Example app listening at http://%s:%s", host, port)
 })*/
 
-var http = require('http');
+//Funcional
+/*var http = require('http');
 
 var server = http.createServer(function (request, response) {
   response.writeHead(200, {"Content-Type": "text/plain"});
@@ -39,12 +40,13 @@ var server = http.createServer(function (request, response) {
 });
 
 var port = process.env.PORT || 8080;
-server.listen(port);
+server.listen(port);*/
 
 
-/*var server_port = process.env.OPENSHIFT_NODEJS_PORT || 8080
-var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1'
- 
-server.listen(server_port, server_ip_address, function () {
-  console.log( "Listening on " + server_ip_address + ", port " + server_port )
-});*/
+const express = require('express')
+const app = express()
+var port = process.env.PORT || 8080;
+
+app.get('/', (req, res) => res.send('Hello World!'))
+
+app.listen(port, () => console.log('Example app listening on port'))

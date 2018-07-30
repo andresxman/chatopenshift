@@ -10,3 +10,8 @@ http.createServer(function (request, response) {
 console.log("Server running on port " + port);*/
 
 
+var app  = require('express')();
+var http = require('http').Server(app);
+var port = process.env.PORT || 8080;
+
+http.listen(port);

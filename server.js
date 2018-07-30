@@ -43,10 +43,24 @@ var port = process.env.PORT || 8080;
 server.listen(port);*/
 
 
-const express = require('express')
+/*const express = require('express')
 const app = express()
 var port = process.env.PORT || 8080;
 
 app.get('/', (req, res) => res.send('Hello World!'))
 
-app.listen(port, () => console.log('Example app listening on port'))
+app.listen(port, () => console.log('Example app listening on port'))*/
+
+
+var express = require('express');
+var app = express();
+
+// Routes
+app.get('/', function(req, res) {
+  res.send('Hello World!');
+});
+
+// Listen
+var port = process.env.PORT || 8080;
+app.listen(port);
+console.log('Listening on localhost:'+ port);

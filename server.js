@@ -16,17 +16,26 @@ var port = process.env.PORT || 8080;
 http.listen(port);*/
 
 
-var express = require('express');
+/*var express = require('express');
 var app = express();
 var port1 = process.env.PORT || 8080;
 
 app.get('/', function (req, res) {
    res.send('Hello World');
-});
+})
 
 var server = app.listen(port1, function () {
    var host = server.address().address
    var port = server.address().port
    
    console.log("Example app listening at http://%s:%s", host, port)
+})*/
+
+
+
+var server_port = process.env.OPENSHIFT_NODEJS_PORT || 8080
+var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1'
+ 
+server.listen(server_port, server_ip_address, function () {
+  console.log( "Listening on " + server_ip_address + ", port " + server_port )
 });

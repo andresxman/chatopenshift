@@ -1,4 +1,4 @@
-var http = require('http');
+/*var http = require('http');
 
 var port = process.env.PORT || 8080;
 
@@ -7,4 +7,6 @@ http.createServer(function (request, response) {
   response.end("Chat\n");
 }).listen(port);
 
-console.log("Server running on port " + port);
+console.log("Server running on port " + port);*/
+
+

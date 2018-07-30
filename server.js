@@ -31,6 +31,12 @@ var server = app.listen(port1, function () {
    console.log("Example app listening at http://%s:%s", host, port)
 })*/
 
+var http = require('http');
+
+var server = http.createServer(function (request, response) {
+  response.writeHead(200, {"Content-Type": "text/plain"});
+  response.end("Chat\n");
+});
 
 
 var server_port = process.env.OPENSHIFT_NODEJS_PORT || 8080

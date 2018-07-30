@@ -2,7 +2,7 @@
 /* Librerias necesarias para la aplicación */
 var app  = require('express')();
 var http = require('http').Server(app);
-var io   = require('socket.io')(http);
+//var io   = require('socket.io')(http);
 var port = process.env.PORT || 8080;
 
 
@@ -20,31 +20,31 @@ app.get('*', function(req, res) {
  *  Configuramos Socket.IO para estar a la escucha de
  *  nuevas conexiones.
  */
-io.on('connection', function(socket) {
+/*io.on('connection', function(socket) {
   
   console.log('New user connected');
   
-  /**
+  / **
    * Cada nuevo socket debera estar a la escucha
    * del evento 'chat message', el cual se activa
    * cada vez que un usuario envia un mensaje.
    * 
    * @param  msg : Los datos enviados desde el cliente a 
    *               través del socket.
-   */
+   * /
   socket.on('chat message', function(msg) {
     io.emit('chat message', msg);
   });
   
-  /**
+  / **
    * Mostramos en consola cada vez que un usuario
    * se desconecte del sistema.
-   */
+   * /
   socket.on('disconnect', function() {
     console.log('User disconnected');
   });
   
-});
+});*/
 
 /**
  * Iniciamos la aplicación en el puerto 3000
